@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-surface: var(--surface);
+  --color-success: var(--success);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #050507;
+  --foreground: #f5f5f7;
+  --muted: #101014;
+  --muted-foreground: #8e8e96;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #4da3ff;
+  --accent-soft: rgba(77, 163, 255, 0.12);
+  --surface: rgba(255, 255, 255, 0.035);
+  --success: #34d399;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #050507;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-accent {
+  box-shadow:
+    0 0 40px rgba(77, 163, 255, 0.14),
+    0 0 120px rgba(77, 163, 255, 0.05);
+}
+
+.bg-radial-fade {
+  background: radial-gradient(ellipse 60% 50% at 50% 35%, rgba(77, 163, 255, 0.1), transparent 70%);
+}
+
+.text-gradient {
+  background: linear-gradient(180deg, #f5f5f7 25%, rgba(245, 245, 247, 0.45) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.chapter-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.image-overlay-left {
+  background: linear-gradient(to right, var(--background) 0%, rgba(5,5,7,0.85) 30%, rgba(5,5,7,0.4) 60%, transparent 100%);
+}
+
+.image-overlay-right {
+  background: linear-gradient(to left, var(--background) 0%, rgba(5,5,7,0.85) 30%, rgba(5,5,7,0.4) 60%, transparent 100%);
+}
+
+.image-overlay-bottom {
+  background: linear-gradient(to top, var(--background) 0%, rgba(5,5,7,0.6) 40%, rgba(5,5,7,0.3) 70%, transparent 100%);
+}
+
+.image-overlay-full {
+  background: rgba(5, 5, 7, 0.6);
+}
+
+.image-edge-right {
+  position: absolute;
+  inset: 0;
+  right: 0;
+  left: auto;
+  width: 8rem;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+.image-edge-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  background: linear-gradient(to top, var(--background), transparent);
 }
