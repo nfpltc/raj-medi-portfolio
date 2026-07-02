@@ -104,6 +104,11 @@ export const chapters = {
       { metric: "Q/Q", label: "Variance improvement" },
       { metric: "4", label: "Planning cycles led" },
     ],
+    annotations: [
+      "Baseline set",
+      "S&OP aligned",
+      "98% accuracy",
+    ],
   },
   strategy: {
     eyebrow: "Strategy",
