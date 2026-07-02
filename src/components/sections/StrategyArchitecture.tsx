@@ -116,9 +116,9 @@ function LayerDescription({
   index: number;
 }) {
   const layer = strategy.layers[index];
-  const start = 0.52 + index * 0.06;
-  const opacity = useTransform(progress, [start, start + 0.06], [0, 1]);
-  const x = useTransform(progress, [start, start + 0.06], [-16, 0]);
+  const start = 0.08 + index * 0.09 + 0.04;
+  const opacity = useTransform(progress, [start, start + 0.08], [0, 1]);
+  const x = useTransform(progress, [start, start + 0.08], [20, 0]);
 
   return (
     <motion.div
@@ -194,8 +194,6 @@ export default function StrategyArchitecture() {
 
   const sceneOpacity = useTransform(scrollYProgress, [0, 0.12], [0, 1]);
   const svgScale = useTransform(scrollYProgress, [0, 0.15], [0.92, 1]);
-  const detailsOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
-  const detailsY = useTransform(scrollYProgress, [0.5, 0.6], [20, 0]);
   const skillsOpacity = useTransform(scrollYProgress, [0.85, 0.95], [0, 1]);
   const skillsY = useTransform(scrollYProgress, [0.85, 0.95], [24, 0]);
 
@@ -265,10 +263,7 @@ export default function StrategyArchitecture() {
             </motion.div>
 
             {/* Layer descriptions */}
-            <motion.div
-              style={{ opacity: detailsOpacity, y: detailsY }}
-              className="divide-y divide-border"
-            >
+            <div className="divide-y divide-border">
               {strategy.layers.map((_, i) => (
                 <LayerDescription
                   key={strategy.layers[i].name}
@@ -276,7 +271,7 @@ export default function StrategyArchitecture() {
                   index={i}
                 />
               ))}
-            </motion.div>
+            </div>
           </div>
 
           <motion.div
