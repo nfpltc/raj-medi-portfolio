@@ -5,7 +5,7 @@ import IntroStatement from "@/components/sections/IntroStatement";
 import NetworkFlow from "@/components/sections/NetworkFlow";
 import AnalyticsDashboard from "@/components/sections/AnalyticsDashboard";
 import ForecastAlignment from "@/components/sections/ForecastAlignment";
-import StrategyChapter from "@/components/sections/StrategyChapter";
+import StrategyArchitecture from "@/components/sections/StrategyArchitecture";
 import ExperienceJourney from "@/components/sections/ExperienceJourney";
 import Credentials from "@/components/sections/Credentials";
 import ContactCinematic from "@/components/sections/ContactCinematic";
@@ -20,7 +20,7 @@ export default function Home() {
         <NetworkFlow />
         <AnalyticsDashboard />
         <ForecastAlignment />
-        <StrategyChapter />
+        <StrategyArchitecture />
         <ExperienceJourney />
         <Credentials />
         <ContactCinematic />
