@@ -2,6 +2,7 @@
 
 import Reveal from "@/components/motion/Reveal";
 import CountUp from "@/components/motion/CountUp";
+import NetworkFlow from "@/components/visuals/NetworkFlow";
 import { chapters, images } from "@/lib/data";
 
 const sc = chapters.supplyChain;
@@ -63,7 +64,14 @@ export default function SupplyChainChapter() {
             </Reveal>
           </div>
 
-          {/* Panel 3: KPIs */}
+          {/* Panel 3: Network Flow Visual */}
+          <div className="flex min-h-[50vh] items-center px-6 py-16 lg:min-h-[70vh] lg:px-14">
+            <div className="w-full">
+              <NetworkFlow />
+            </div>
+          </div>
+
+          {/* Panel 4: KPIs */}
           <div className="flex min-h-[50vh] items-center px-6 py-16 lg:min-h-[70vh] lg:px-14">
             <Reveal delay={0.05}>
               <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-3">

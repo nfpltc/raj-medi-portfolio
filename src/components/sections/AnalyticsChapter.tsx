@@ -2,6 +2,7 @@
 
 import Reveal from "@/components/motion/Reveal";
 import CountUp from "@/components/motion/CountUp";
+import AnalyticsDashboard from "@/components/visuals/AnalyticsDashboard";
 import { chapters, images } from "@/lib/data";
 
 const analytics = chapters.analytics;
@@ -46,8 +47,15 @@ export default function AnalyticsChapter() {
             </Reveal>
           </div>
 
-          {/* Panel 2: KPI dashboard */}
+          {/* Panel 2: Dashboard Visual */}
           <div className="flex min-h-[60vh] items-center px-6 py-16 lg:min-h-[80vh] lg:px-14">
+            <div className="w-full">
+              <AnalyticsDashboard />
+            </div>
+          </div>
+
+          {/* Panel 3: KPI cards */}
+          <div className="flex min-h-[50vh] items-center px-6 py-16 lg:min-h-[70vh] lg:px-14">
             <Reveal delay={0.05}>
               <div className="w-full">
                 <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">

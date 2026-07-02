@@ -1,6 +1,7 @@
 "use client";
 
 import Reveal from "@/components/motion/Reveal";
+import StrategyLayers from "@/components/visuals/StrategyLayers";
 import { chapters, images } from "@/lib/data";
 
 const strategy = chapters.strategy;
@@ -64,6 +65,13 @@ export default function StrategyChapter() {
               </Reveal>
             </div>
           ))}
+
+          {/* Panel: Decision Architecture Visual */}
+          <div className="flex min-h-[50vh] items-center px-6 py-16 lg:min-h-[60vh] lg:px-14">
+            <div className="w-full">
+              <StrategyLayers />
+            </div>
+          </div>
 
           {/* Final panel: Skills */}
           <div className="flex min-h-[50vh] items-center px-6 py-16 lg:min-h-[60vh] lg:px-14">
