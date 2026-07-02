@@ -69,14 +69,32 @@ export default function ContactCinematic() {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <Magnetic>
                 <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="group relative inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.04]"
+                  href={siteConfig.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-2.5 justify-center rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.04]"
                 >
                   <span
                     aria-hidden="true"
                     className="glow-accent absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
-                  <span className="relative">Email Sumanraj</span>
+                  <svg
+                    width={16}
+                    height={16}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                    className="relative"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  <span className="relative">Download Resume</span>
                 </a>
               </Magnetic>
 
@@ -100,15 +118,6 @@ export default function ContactCinematic() {
                 </a>
               </Magnetic>
             </div>
-          </Reveal>
-
-          <Reveal delay={0.6}>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="mt-16 inline-block text-lg text-muted-foreground underline-offset-8 transition-colors duration-300 hover:text-foreground hover:underline md:text-2xl"
-            >
-              {siteConfig.email}
-            </a>
           </Reveal>
         </div>
       </div>

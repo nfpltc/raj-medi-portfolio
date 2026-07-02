@@ -13,10 +13,12 @@ export default function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href={`mailto:${siteConfig.email}`}
+              href={siteConfig.resume}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Email
+              Resume
             </a>
             <a
               href={siteConfig.linkedin}

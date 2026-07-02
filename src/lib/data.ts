@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Senior operations and supply chain professional with deep expertise in logistics optimization, vendor management, and business process transformation across pharmaceutical, e-commerce, and global freight industries.",
   url: "https://sumanrajmedikondu.com",
-  email: "sumanraj.medikondu@email.com",
+  resume: "/Sumanraj_Medikondu_Resume.html",
   linkedin: "https://linkedin.com/in/sumanrajmedikondu",
 };
 
