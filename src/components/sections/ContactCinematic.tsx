@@ -69,7 +69,7 @@ export default function ContactCinematic() {
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <Magnetic>
                 <a
-                  href={siteConfig.resume}
+                  href="/api/resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative inline-flex items-center gap-2.5 justify-center rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-transform duration-300 hover:scale-[1.04]"

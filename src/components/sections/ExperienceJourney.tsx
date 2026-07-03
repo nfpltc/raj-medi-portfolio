@@ -7,7 +7,7 @@ import {
   useScroll,
   useSpring,
 } from "framer-motion";
-import { experience, type Experience } from "@/lib/data";
+import { type Experience } from "@/lib/data";
 import Reveal from "@/components/motion/Reveal";
 import TiltCard from "@/components/motion/TiltCard";
 
@@ -105,7 +105,7 @@ function TimelineEntry({ item, index }: { item: Experience; index: number }) {
   );
 }
 
-export default function ExperienceJourney() {
+export default function ExperienceJourney({ items }: { items: Experience[] }) {
   const timelineRef = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -151,7 +151,7 @@ export default function ExperienceJourney() {
           </div>
 
           <div className="space-y-14 lg:space-y-20">
-            {experience.map((item, index) => (
+            {items.map((item, index) => (
               <TimelineEntry key={item.company} item={item} index={index} />
             ))}
           </div>

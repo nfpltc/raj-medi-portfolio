@@ -6,8 +6,11 @@ import SupplyChainCinematic from "@/components/cinematic/SupplyChainCinematic";
 import ExperienceJourney from "@/components/sections/ExperienceJourney";
 import Credentials from "@/components/sections/Credentials";
 import ContactCinematic from "@/components/sections/ContactCinematic";
+import { loadExperience } from "@/lib/experience-loader";
 
-export default function Home() {
+export default async function Home() {
+  const experience = await loadExperience();
+
   return (
     <>
       <Navbar />
@@ -15,7 +18,7 @@ export default function Home() {
         <PersonalHero />
         <StoryHero />
         <SupplyChainCinematic />
-        <ExperienceJourney />
+        <ExperienceJourney items={experience} />
         <Credentials />
         <ContactCinematic />
       </main>
