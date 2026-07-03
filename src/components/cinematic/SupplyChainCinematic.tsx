@@ -86,7 +86,6 @@ function ProcurementScene({ p }: { p: MotionValue<number> }) {
 function ManufacturingScene({ p }: { p: MotionValue<number> }) {
   const opacity = useTransform(p, [0.15, 0.19, 0.28, 0.33], [0, 1, 1, 0]);
   const conveyorX = useTransform(p, [0.18, 0.3], [0, -120]);
-  const gearRot = useTransform(p, [0.17, 0.32], [0, 360]);
   const fillH = useTransform(p, [0.2, 0.28], [0, 30]);
   const stageOps = [
     useTransform(p, [0.18, 0.21], [0, 1]),
@@ -119,11 +118,7 @@ function ManufacturingScene({ p }: { p: MotionValue<number> }) {
           <motion.g key={label} style={{ opacity: stageOps[i] }}>
             <rect x={cx - 45} y="160" width="90" height="110" rx="8" fill="rgba(74,111,165,0.12)" stroke="rgba(74,111,165,0.3)" strokeWidth="1" />
             <text x={cx} y="195" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="13" fontWeight="600">{label}</text>
-            {/* gear icon */}
-            <motion.g style={{ rotate: gearRot }} transform={`translate(${cx}, 240)`}>
-              <circle r="12" fill="none" stroke="rgba(77,163,255,0.3)" strokeWidth="2" />
-              <circle r="4" fill="rgba(77,163,255,0.4)" />
-            </motion.g>
+            <circle cx={cx} cy="240" r="4" fill="rgba(77,163,255,0.3)" />
             {i < 3 && (
               <line x1={cx + 50} y1="215" x2={cx + 90} y2="215" stroke="rgba(77,163,255,0.2)" strokeWidth="1.5" strokeDasharray="4 3" />
             )}
@@ -147,7 +142,6 @@ function WarehouseScene({ p }: { p: MotionValue<number> }) {
   const shelfFill = useTransform(p, [0.34, 0.44], [0, 1]);
   const boxY = useTransform(p, [0.36, 0.42], [-40, 0]);
   const boxOp = useTransform(p, [0.36, 0.4], [0, 1]);
-  const scanLine = useTransform(p, [0.38, 0.44], [0, 200]);
 
   const shelves = Array.from({ length: 20 }, (_, i) => ({
     x: 140 + (i % 5) * 120,
@@ -192,10 +186,6 @@ function WarehouseScene({ p }: { p: MotionValue<number> }) {
         <text x="87" y="312" textAnchor="middle" fill="rgba(52,211,153,0.6)" fontSize="9">NEW</text>
       </motion.g>
 
-      {/* scan line */}
-      <motion.line x1="130" y1="140" x2="130" stroke="rgba(77,163,255,0.3)" strokeWidth="1"
-        style={{ y2: scanLine }}
-      />
     </motion.g>
   );
 }
@@ -281,7 +271,6 @@ function HubScene({ p }: { p: MotionValue<number> }) {
   const sortX2 = useTransform(p, [0.7, 0.76], [400, 550]);
   const sortX3 = useTransform(p, [0.7, 0.76], [400, 400]);
   const sortY3 = useTransform(p, [0.7, 0.76], [200, 300]);
-  const scanOp = useTransform(p, [0.68, 0.72, 0.74, 0.76], [0, 1, 1, 0]);
   const routeOp = useTransform(p, [0.74, 0.78], [0, 1]);
 
   return (
@@ -297,12 +286,6 @@ function HubScene({ p }: { p: MotionValue<number> }) {
       <rect x="250" y="140" width="300" height="180" rx="8" fill="rgba(61,90,128,0.1)" stroke="rgba(61,90,128,0.25)" strokeWidth="1.5" />
       <rect x="370" y="140" width="60" height="20" rx="4" fill="rgba(61,90,128,0.15)" />
       <text x="400" y="155" textAnchor="middle" fill="rgba(255,255,255,0.4)" fontSize="9">HUB</text>
-
-      {/* scan bar */}
-      <motion.g style={{ opacity: scanOp }}>
-        <rect x="360" y="170" width="80" height="5" rx="2" fill="rgba(52,211,153,0.4)" />
-        <rect x="380" y="172" width="40" height="1" fill="rgba(52,211,153,0.8)" />
-      </motion.g>
 
       {/* central intake */}
       <g transform="translate(400, 200)">
@@ -344,7 +327,6 @@ function DeliveryScene({ p }: { p: MotionValue<number> }) {
   const bottleOp = useTransform(p, [0.88, 0.92], [0, 1]);
   const checkOp = useTransform(p, [0.93, 0.97], [0, 1]);
   const checkScale = useTransform(p, [0.93, 0.97], [0, 1]);
-  const glowOp = useTransform(p, [0.95, 1.0], [0, 0.4]);
 
   return (
     <motion.g style={{ opacity }}>
@@ -390,8 +372,6 @@ function DeliveryScene({ p }: { p: MotionValue<number> }) {
         <path d="M-6 0 L-2 5 L8 -5" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       </motion.g>
 
-      {/* glow */}
-      <motion.circle cx="400" cy="270" r="80" fill="rgba(52,211,153,0.06)" style={{ opacity: glowOp }} />
     </motion.g>
   );
 }
