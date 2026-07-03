@@ -50,7 +50,7 @@ export default function StoryHero() {
           className="relative z-10 text-center"
           style={{ y: titleY, opacity: titleOpacity }}
         >
-          <p className="text-[13px] uppercase tracking-[0.3em] text-accent">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-accent drop-shadow-lg">
             {siteConfig.name}
           </p>
           <h1 className="mt-4 text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
@@ -58,7 +58,7 @@ export default function StoryHero() {
             <br />
             <span className="text-gradient">to Customer.</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-md text-base text-white/50 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-md text-base text-white/80 sm:text-lg">
             A visual journey through every stage of the supply chain — the
             networks, the systems, and the decisions that move the world.
           </p>

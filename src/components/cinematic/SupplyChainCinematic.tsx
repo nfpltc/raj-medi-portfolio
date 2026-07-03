@@ -84,7 +84,7 @@ function Chapter({
         style={{ scale: imgScale }}
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/25 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/75" />
 
       <motion.div
         className="absolute inset-0 flex items-center"
@@ -92,14 +92,14 @@ function Chapter({
       >
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-12">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
+            <div className="rounded-2xl bg-black/30 p-6 backdrop-blur-sm sm:p-8">
               <p className="text-[13px] font-medium uppercase tracking-[0.25em] text-accent">
                 {eyebrow}
               </p>
               <h2 className="mt-4 whitespace-pre-line text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {title}
               </h2>
-              <p className="mt-6 max-w-lg text-base leading-relaxed text-white/55 sm:text-lg">
+              <p className="mt-6 max-w-lg text-base leading-relaxed text-white/80 sm:text-lg">
                 {desc}
               </p>
               <div className="mt-10 grid grid-cols-3 gap-5">
@@ -108,7 +108,7 @@ function Chapter({
                     <p className="text-2xl font-semibold text-white sm:text-3xl">
                       {s.value}
                     </p>
-                    <p className="mt-1 text-xs text-white/35 sm:text-sm">
+                    <p className="mt-1 text-xs text-white/70 sm:text-sm">
                       {s.label}
                     </p>
                   </div>
