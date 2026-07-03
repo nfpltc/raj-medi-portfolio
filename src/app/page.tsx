@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PersonalHero from "@/components/cinematic/PersonalHero";
 import StoryHero from "@/components/cinematic/StoryHero";
 import SupplyChainCinematic from "@/components/cinematic/SupplyChainCinematic";
 import ExperienceJourney from "@/components/sections/ExperienceJourney";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       <main className="flex-1">
+        <PersonalHero />
         <StoryHero />
         <SupplyChainCinematic />
         <ExperienceJourney />
