@@ -1,27 +1,24 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroCinematic from "@/components/sections/HeroCinematic";
-import IntroStatement from "@/components/sections/IntroStatement";
-import NetworkFlow from "@/components/sections/NetworkFlow";
-import AnalyticsDashboard from "@/components/sections/AnalyticsDashboard";
-import ForecastAlignment from "@/components/sections/ForecastAlignment";
-import StrategyArchitecture from "@/components/sections/StrategyArchitecture";
+import PersonalHero from "@/components/cinematic/PersonalHero";
+import StoryHero from "@/components/cinematic/StoryHero";
+import SupplyChainCinematic from "@/components/cinematic/SupplyChainCinematic";
 import ExperienceJourney from "@/components/sections/ExperienceJourney";
 import Credentials from "@/components/sections/Credentials";
 import ContactCinematic from "@/components/sections/ContactCinematic";
+import { loadExperience } from "@/lib/experience-loader";
 
-export default function Home() {
+export default async function Home() {
+  const experience = await loadExperience();
+
   return (
     <>
       <Navbar />
       <main className="flex-1">
-        <HeroCinematic />
-        <IntroStatement />
-        <NetworkFlow />
-        <AnalyticsDashboard />
-        <ForecastAlignment />
-        <StrategyArchitecture />
-        <ExperienceJourney />
+        <PersonalHero />
+        <StoryHero />
+        <SupplyChainCinematic />
+        <ExperienceJourney items={experience} />
         <Credentials />
         <ContactCinematic />
       </main>
